@@ -14,7 +14,7 @@ namespace BankAppWithAPI.Controllers.User
         : ControllerBase
     {
         [HttpGet]
-        [Route("me")]
+        [Route("get")]
         [Authorize]
         public async Task<ActionResult<ServiceResponse<GetUserDto>>> GetUser()
         {
@@ -24,7 +24,7 @@ namespace BankAppWithAPI.Controllers.User
         }
 
         [HttpPost]
-        [Route("Register")]
+        [Route("register")]
         public async Task<ActionResult<ServiceResponse<int>>> Register(UserRegisterDto userRegisterDto)
         {
             var response = await userService.Register(userRegisterDto);
@@ -32,7 +32,7 @@ namespace BankAppWithAPI.Controllers.User
             return StatusCode((int)response.StatusCode, response);
         }
 
-        [HttpPut("UpdateInfo")]
+        [HttpPut("updateInfo")]
         [Authorize]
         public async Task<ActionResult<ServiceResponse<int>>> UpdateInfo(UpdateUserDto userUpdateDto)
         {

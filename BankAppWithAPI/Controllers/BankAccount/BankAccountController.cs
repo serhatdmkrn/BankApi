@@ -24,7 +24,7 @@ namespace BankAppWithAPI.Controllers.BankAccount
             return StatusCode((int)response.StatusCode, response);
         }
 
-        [HttpGet("my Accounts")]
+        [HttpGet("myAccounts")]
         public async Task<ActionResult<ServiceResponse<List<GetBankAccountDto>>>> GetBankAccounts()
         {
             var response = await bankAccountService.GetUserBankAccounts(User);

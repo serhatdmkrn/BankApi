@@ -6,7 +6,6 @@ using BankAppWithAPI.Models;
 using Microsoft.AspNetCore.Identity;
 using BankAppWithAPI.Extensions;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using BankAppWithAPI.Services.BankAccountService;
 using BankAppWithAPI.Services.CardService;
 using BankAppWithAPI.Services.OperationService;

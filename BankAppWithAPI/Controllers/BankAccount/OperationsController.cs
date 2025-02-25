@@ -12,7 +12,7 @@ namespace BankAppWithAPI.Controllers.BankAccount
     [Route("[controller]")]
     public class OperationsController(IOperationService _operationService) : ControllerBase
     {
-        [HttpPost("Deposit")]
+        [HttpPost("deposit")]
         [Authorize(AuthenticationSchemes = "MyTokenScheme")]
         public async Task<ActionResult<ServiceResponse<OperationResultDto>>> Deposit(int amount)
         {
@@ -21,7 +21,7 @@ namespace BankAppWithAPI.Controllers.BankAccount
             return StatusCode((int)response.StatusCode, response);
         }
 
-        [HttpPost("Withdraw")]
+        [HttpPost("withdraw")]
         [Authorize(AuthenticationSchemes = "MyTokenScheme")]
         public async Task<ActionResult<ServiceResponse<OperationResultDto>>> Withdraw(int amount)
         {
@@ -30,7 +30,7 @@ namespace BankAppWithAPI.Controllers.BankAccount
             return StatusCode((int)response.StatusCode, response);
         }
 
-        [HttpPost("Transfer")]
+        [HttpPost("transfer")]
         public async Task<ActionResult<ServiceResponse<TransferRequestDto>>> Transfer(TransferRequestDto request)
         {
             var response = await _operationService.Transfer(request, User);
